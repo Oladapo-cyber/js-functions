@@ -81,3 +81,12 @@ function generateFibonacci(terms) {
 }
 
 console.log(generateFibonacci(10));
+
+
+function digPow(n, p) {
+  const sum = n.toString().split('').reduce((acc, digit, idx) => {
+    return acc + Math.pow(Number(digit), p + idx);
+  }, 0);
+  
+  return sum % n === 0 ? sum / n : -1;
+}
